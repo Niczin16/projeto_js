@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastrar Nota Aluno</title>
+</head>
+<body>
+    <header>
+        <h1>Cadastrar Notas de Alunos</h1>
+    </header>    
+    <form >
+        <label name="nome">Nome: </label>
+        <input id="nome" name="nome" type="text">
+
+        <label name="idade">Idade: </label>
+        <input id="idade" name="idade" type="text">
+
+        <label name="curso">Curso: </label>
+        <input id="curso" name="curso" type="text">
+
+        <label name="nota1">Nota 1: </label>
+        <input id="nota1" name="nota1" type="number">
+
+        <label name="nota2">Nota 2: </label>
+        <input id="nota2" name="nota2" type="number">
+
+        <button onclick="inserirCadastro()">Cadastrar</button>
+    </form>
+
+    <table>
+        <h2>Tabela de ALunos</h2>
+       <tr>
+            <td>Nome</td>
+            <td>Idade</td>
+            <td>Curso</td>
+            <td>Nota 1</td>
+            <td>Nota 2</td>
+       </tr>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
