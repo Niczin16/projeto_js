@@ -4,12 +4,12 @@ let curso = document.getElementById('curso');
 let nota1 = document.getElementById('nota1');
 let nota2 = document.getElementById('nota2');
 let formulario = document.querySelector('form');
-// Seleciona o corpo da tabela onde as linhas serão inseridas
+
 let tabelaCorpo = document.querySelector('table tbody'); 
 
 formulario.addEventListener('submit', function(event){
     event.preventDefault();
-    inserirCadastro(); // Executa a função ao enviar
+    inserirCadastro(); 
 });
 
 function calcularMedia(valorA, valorB){
@@ -37,15 +37,15 @@ function inserirCadastro(){
     } else {
         let lResultado = calcularMedia(n1, n2);
         
-        let status = '';
-        let corFundo = '';
-        
-        if (lResultado >= 6) {
-            status = 'Aprovado';
-            corFundo = 'green';
-        } else {
-            status = 'Reprovado';
-            corFundo = 'red';
+        let Status = '';
+        let CorFundo = '';
+
+        if (lResultado >= 6){
+            Status = 'Aprovado';
+            CorFundo = 'green';
+        }else{
+            Status = 'Reprovado';
+            CorFundo = 'red';
         }
 
         let novaLinha = tabelaCorpo.insertRow();
@@ -53,14 +53,15 @@ function inserirCadastro(){
         novaLinha.insertCell(0).innerText = lNome;
         novaLinha.insertCell(1).innerText = lIdade;
         novaLinha.insertCell(2).innerText = lCurso;
-        novaLinha.insertCell(3).innerText = lResultado.toFixed(1); 
-        
+        novaLinha.insertCell(3).innerText = lResultado.toFixed(1);
+
         let celulaStatus = novaLinha.insertCell(4);
-        celulaStatus.innerText = status;
-        celulaStatus.style.backgroundColor = corFundo;
+        celulaStatus.innerText = Status;
+        celulaStatus.style.backgroundColor = CorFundo;
         celulaStatus.style.color = 'white'; 
         celulaStatus.style.fontWeight = 'bold';
 
         formulario.reset();
+
     }
 }
